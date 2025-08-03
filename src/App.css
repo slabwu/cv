@@ -40,3 +40,35 @@
 .read-the-docs {
   color: #888;
 }
+
+
+
+
+
+main {
+  display: flex;
+  gap: 100px;
+}
+
+main h2 {
+  margin: 0;
+}
+
+.form {
+  border: 1px solid black;
+  width: 300px;
+}
+
+.form > section {
+  border: 1px solid black;
+  margin: 20px;
+  padding: 20px;
+}
+
+.resume {
+  border: 1px solid black;
+  box-sizing: border-box;
+  height: calc(297px * 2);
+  width: calc(210px * 2);
+  padding: 20px;
+}
