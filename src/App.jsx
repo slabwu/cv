@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Content from './Content.jsx'
+import Content from './content.jsx'
 import PrintIcon from '@mui/icons-material/Print'
 import './App.css'
 
