@@ -12,7 +12,10 @@ function App() {
 
   return (
     <>
-      <h1>Curriculum Vitae</h1>
+      <header>
+        <h1>Curriculum Vitae</h1>
+        <button className='print' onClick={() => window.print()}>Print</button>
+      </header>
       <Content details={details} setDetails={setDetails}></Content>
     </>
   )
