@@ -153,12 +153,18 @@ header {
   transform: translateY(2px);
 }
 
-input {
+input, textarea {
   margin-left: 10px;
   border: none;
   border-radius: 20px;
-  padding: 8px 2px 8px 14px;
-  width: 220px;
+  padding: 8px 10px 8px 14px;
+  width: 216px;
+}
+
+textarea {
+  resize: none;
+  height: 150px !important;
+  font-family: arial;
 }
 
 .section {

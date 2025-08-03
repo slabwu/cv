@@ -28,11 +28,14 @@ function Job({ job, isActive, edit, remove, activate }) {
 
                 { isActive && (
                     <section>
-                        {fields.map(({ name, value }) => (
-                            <>
-                                <Field key={value} name={name} value={job[value]} onChange={e => handleChange(value, e.target.value)}></Field>
-                            </>
-                        ))}
+                        {fields.map(({ name, value }, index) => {
+                            let description = index === 2
+                            return (
+                                <>
+                                    <Field key={value} name={name} value={job[value]} onChange={e => handleChange(value, e.target.value)} description={description}></Field>
+                                </>
+                            )
+                        })}
                         <button onClick={() => activate(null)}>Confirm</button>
                     </section>
                 )}

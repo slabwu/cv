@@ -1,8 +1,8 @@
-export default function Field({ name, value, onChange }) {
+export default function Field({ name, value, onChange , description }) {
   return (
     <label>
       <p>{name}</p>
-      <input name={value} value={value} onChange={onChange} />
+      {description ? <textarea name={value} value={value} onChange={onChange}></textarea> : <input name={value} value={value} onChange={onChange} />}
       <br />
     </label>
   );
