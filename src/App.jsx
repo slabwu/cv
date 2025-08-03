@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Content from './Content.jsx'
+import PrintIcon from '@mui/icons-material/Print'
 import './App.css'
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
     <>
       <header>
         <h1>Curriculum Vitae</h1>
-        <button className='print' onClick={() => window.print()}>Print</button>
+        <button className='print' onClick={() => window.print()}><p>Print</p><PrintIcon></PrintIcon></button>
       </header>
       <Content></Content>
     </>

@@ -1,37 +1,43 @@
 import { useState } from 'react'
 import Field from './field.jsx'
+import EditIcon from '@mui/icons-material/Edit'
+import CloseIcon from '@mui/icons-material/Close'
+import AddIcon from '@mui/icons-material/Add'
 
 function Job({ job, isActive, edit, remove, activate }) {
     const fields = [
         {name: 'Job', value: 'name'},
         {name: 'Position', value: 'position'},
         {name: 'Description', value: 'description'},
-        {name: 'Start', value: 'start'},
-        {name: 'End', value: 'end'}
+        {name: 'Start Date', value: 'start'},
+        {name: 'End Date', value: 'end'}
     ]
 
     const handleChange = (field, value) => {
         edit({...job, [field]: value})
     }
 
-    if (isActive) {
-        return (
-            <div>
-                {fields.map(({ name, value }) => (
-                    <Field key={value} name={name} value={job[value]} onChange={e => handleChange(value, e.target.value)}></Field>
-                ))}
-                <button onClick={() => activate(null)}>Cancel</button>
-            </div>
-        )
-    } else {
-        return (
-            <div>
-                <h3>{job.name}</h3>
-                <button onClick={() => activate(job.id)}>Edit</button>
-                <button onClick={() => remove(job.id)}>Delete</button>
-            </div>
-        )
-    }
+    return (
+            <>
+                <hr />
+                <div class='section'>
+                    <h3>{job.name}</h3>
+                    <button onClick={() => activate(job.id)}><EditIcon></EditIcon></button>
+                    <button className='delete' onClick={() => remove(job.id)}><CloseIcon></CloseIcon></button>
+                </div>
+
+                { isActive && (
+                    <section>
+                        {fields.map(({ name, value }) => (
+                            <>
+                                <Field key={value} name={name} value={job[value]} onChange={e => handleChange(value, e.target.value)}></Field>
+                            </>
+                        ))}
+                        <button onClick={() => activate(null)}>Confirm</button>
+                    </section>
+                )}
+            </>
+    )
 }
 
 export default function Experience({ experience, setExperience }) {
@@ -56,9 +62,9 @@ export default function Experience({ experience, setExperience }) {
             id: crypto.randomUUID(),
             name: "Job Name",
             position: "Position Name",
-            description: "Description of Job",
-            start: "01/01/2000",
-            end: "01/01/2004"
+            description: "Job Description",
+            start: "Start Date",
+            end: "End Date"
         }
         setExperience([...experience, newJob])
     }
@@ -69,7 +75,11 @@ export default function Experience({ experience, setExperience }) {
             {experience.map(job => (
                 <Job key={job.id} job={job} isActive={activeId === job.id} remove={removeJob} edit={editJob} activate={activateJob}></Job>
             ))}
-            <button onClick={addJob}>+</button>
+            <hr />
+            <div class='add'>
+                <button onClick={addJob}><AddIcon></AddIcon></button>
+                <h3>Add Experience</h3>
+            </div>
         </section>
     )
 }

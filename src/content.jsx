@@ -6,8 +6,8 @@ import Resume from './resume.jsx'
 
 export default function Content() {
     const [details, setDetails] = useState({
-        name: "Johnathan Brown",
-        email: "johnathanbrown1906@gmail.com",
+        name: "Jonathan Brown",
+        email: "jonathanbrown1906@gmail.com",
         phone: "+1 3472718260",
         country: "San Francisco, CA"
     });
@@ -31,18 +31,20 @@ export default function Content() {
 
     const [experience, setExperience] = useState([
         {
+            id: crypto.randomUUID(),
             name: "PeachStem",
             position: "Front-End Developer",
             description: "Developed and maintained responsive user interfaces using HTML, CSS, JavaScript, and modern frameworks (e.g., React). Collaborated closely with designers and backend engineers in a fast-paced startup environment to deliver scalable, user-friendly web applications.",
-            start: "23/01/2004",
-            end: "23/02/2006"
+            start: "Jan 2024",
+            end: "Current"
         },
         {
+            id: crypto.randomUUID(),
             name: "Gathero Solutions",
             position: "Market Researcher",
             description: "Conducted in-depth market analysis to identify technology trends, customer needs, and competitor positioning. Delivered actionable insights through data collection, surveys, and competitive intelligence to support product development and strategic planning.",
-            start: "23/01/2004",
-            end: "23/02/2006"
+            start: "Dec 2020",
+            end: "Oct 2023"
         }
     ]);
 
