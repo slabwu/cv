@@ -3,7 +3,7 @@ export default function Resume({ details, education, experience }) {
         <section className='resume'>
             <h2>{details.name}</h2>
             <p>
-                {details.email} - {details.phone} - {details.country}
+                {details.email} • {details.phone} • {details.country}
             </p>
 
             <h2 className='header'>Education</h2>
