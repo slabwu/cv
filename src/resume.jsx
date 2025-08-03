@@ -1,4 +1,4 @@
-export default function Resume({ details, education }) {
+export default function Resume({ details, education, experience }) {
     return (
         <section className='resume'>
             <h2>{details.name}</h2>
@@ -20,6 +20,17 @@ export default function Resume({ details, education }) {
             
             <hr />
         
+            {experience.map((job) => (
+                <>
+                <h3>{job.name}</h3>
+                <h4>{job.position}</h4>
+                <p>{job.description}</p>
+                <p>
+                    {job.start} - {job.end}
+                </p>
+                </>
+            ))}
+
         </section>
     )
 }
